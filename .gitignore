@@ -36,6 +36,9 @@ node_modules/
 npm-debug.log
 yarn-error.log
 
+/android
+/ios
+
 # BUCK
 buck-out/
 \.buckd/
@@ -59,5 +62,4 @@ buck-out/
 # Ruby / CocoaPods
 /ios/Pods/
 /vendor/bundle/
-/android/
-/ios/
+
