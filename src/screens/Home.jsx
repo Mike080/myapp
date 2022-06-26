@@ -1,18 +1,16 @@
 import React from 'react'
 import { View, StyleSheet } from 'react-native'
-import Header from './components/Header'
-// import Products from './components/Products'
+import Header from '../components/Header'
+import Products from '../components/Products'
 import { Provider } from 'react-redux'
-import { store } from './redux'
-import Form from './components/Form'
+import { store } from '../redux/index'
 
 const Home = () => {
   return (
     <Provider store={store}>
       <View styles={styles.container}>
         <Header title="Home" />
-        {/* <Products /> */}
-        <Form />
+        <Products />
       </View>
     </Provider>
   )
