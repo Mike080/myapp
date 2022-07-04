@@ -1,9 +1,9 @@
 import { StyleSheet, Text, TouchableOpacity } from 'react-native'
 import React from 'react'
 
-const FormButton = ({title}) => {
+const FormButton = ({title, onPress}) => {
   return (
-    <TouchableOpacity style={styles.button}>
+    <TouchableOpacity onPress={onPress} style={styles.button}>
       <Text style={styles.btnText}>{title}</Text>
     </TouchableOpacity>
   )
