@@ -1,5 +1,7 @@
-import axios from "axios";
+import axios from 'axios'
 
-export default axios.create({
+const api = axios.create({
   baseURL: 'http://smktesting.herokuapp.com'
 })
+
+export default api

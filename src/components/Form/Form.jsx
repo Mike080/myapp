@@ -2,18 +2,18 @@ import { StyleSheet, TextInput, View } from 'react-native'
 import React from 'react'
 import FormButton from './FormButton'
 import { useForm, Controller } from 'react-hook-form'
-import API from '../../api/index'
+import api from '../../api'
 
 const Form = () => {
   const { control, handleSubmit } = useForm({
     defaultValues: {
       username: '',
-      password: '',
-      confirmPassword: ''
+      password: ''
     }
   })
   const onSubmit = async data => {
-    await API.post('/api/register', data)
+    const res = await api.post('/api/register/', { ...data })
+    console.log(res.data)
   }
   return (
     <View style={styles.container}>
@@ -49,23 +49,6 @@ const Form = () => {
           />
         )}
         name="password"
-      />
-      <Controller
-        control={control}
-        rules={{
-          required: true
-        }}
-        render={({ field: { onChange, onBlur, value } }) => (
-          <TextInput
-            style={styles.input}
-            placeholder="confirm password"
-            onBlur={onBlur}
-            secureTextEntry
-            onChangeText={onChange}
-            value={value}
-          />
-        )}
-        name="confirmPassword"
       />
 
       <FormButton onPress={handleSubmit(onSubmit)} title="Register" />
