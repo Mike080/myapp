@@ -6,7 +6,7 @@ import Button from './Button'
 const Review = () => {
   const [text, setText] = useState('')
   const sendReview = () => {
-
+    
   }
   return (
     <View>
