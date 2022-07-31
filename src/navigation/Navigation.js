@@ -6,7 +6,7 @@ import 'react-native-gesture-handler'
 
 const Drawer = createDrawerNavigator()
 
-function Navigation() {
+function DrawerNavigation() {
   return (
     <Drawer.Navigator>
       <Drawer.Screen name="Home" component={Home} />
@@ -15,4 +15,6 @@ function Navigation() {
   )
 }
 
-export default Navigation
+
+
+export default DrawerNavigation

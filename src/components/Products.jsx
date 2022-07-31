@@ -5,7 +5,7 @@ import { getProducts } from '../redux/productSlice'
 import Product from './Product'
 import Card from './Card'
 
-const Products = () => {
+const Products = ({rate}) => {
   const dispatch = useDispatch()
   const products = useSelector(state => state.product.products)
   useEffect(() => {
@@ -18,7 +18,7 @@ const Products = () => {
         keyExtractor={item => item.id}
         renderItem={({ item }) => (
           <Card>
-            <Product product={item} />
+            <Product product={item} />            
           </Card>
         )}
       />

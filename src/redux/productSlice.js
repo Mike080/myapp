@@ -1,12 +1,12 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
-import api from '../api'
+import axios from '../api'
 
 const initialState = {
   products: []
 }
 
 export const getProducts = createAsyncThunk('products/getProducts', async (_, { rejectWithValue, dispatch }) => {
-  const response = await api.get('/api/products')
+  const response = await axios.get('/api/products/')
   dispatch(setProducts(response.data))
 })
 
@@ -14,7 +14,7 @@ export const productSlice = createSlice({
   name: 'products',
   initialState,
   reducers: {
-    setProducts(state, action) {
+    setProducts: (state, action) => {
       state.products = action.payload
     }
   },
