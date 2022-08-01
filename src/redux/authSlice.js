@@ -7,9 +7,14 @@ const initialState = {
   isAuth: false
 }
 
-export const register = createAsyncThunk('auth/register', async (data, { rejectWithValue, dispatch }) => {
+export const register = createAsyncThunk('auth/register', async (data) => {
   const res = await axios.post('/api/register/', data)
-  dispatch(setSignIn(res.data))
+  console.log(res.data)
+})
+
+export const login = createAsyncThunk('auth/login', async (data) => {
+  const res = await axios.post('/api/login/', data)
+  console.log(res.data)
 })
 
 const authSlice = createSlice({
@@ -29,5 +34,4 @@ const authSlice = createSlice({
   }
 })
 
-export const { setSignIn } = authSlice.actions
 export default authSlice.reducer

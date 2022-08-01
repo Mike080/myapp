@@ -18,7 +18,7 @@ const Products = () => {
         keyExtractor={item => item.id}
         renderItem={({ item }) => (
           <Card>
-            <Product product={item} />            
+            <Product product={item} />
           </Card>
         )}
       />
@@ -27,5 +27,3 @@ const Products = () => {
 }
 
 export default Products
-
-
